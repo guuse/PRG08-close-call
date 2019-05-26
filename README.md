@@ -1,6 +1,7 @@
 # PRG08-Week1-oefening2
 
 ## Close Call
+![alt text](close-call.png "Close Call")
 
 ### Gameplay
 
