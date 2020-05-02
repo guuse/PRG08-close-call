@@ -1,10 +1,11 @@
-# PRG08-Week4-oefening2
+# PRG08 Week 2 Polymorphism
 
 ## Close Call
 ![alt text](close-call.png "Close Call")
 
 ### Gameplay
 
+- <a href="https://hr-cmgt.github.io/PRG08-close-call-completed/" target="_blank">Close call voorbeeld</a>
 - De taxi's komt aanrijden van links naar rechts over het plateau. De snelheid is random.
 - Zodra je op de spatie drukt begint de auto met afremmen. 
 - Als de auto het rotsblok raakt, stort het rotsblok omlaag. Je bent game over.
