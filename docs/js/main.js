@@ -7,17 +7,18 @@ class Wheel extends HTMLElement {
 }
 window.customElements.define("wheel-component", Wheel);
 class Car extends HTMLElement {
-    constructor(yIndex) {
+    constructor(yIndex, game) {
         super();
         this.x = 0;
         this.y = 0;
         this.speed = Math.random() * 2 + 1;
         this.braking = false;
         this.stopped = false;
+        this.game = game;
         this.X = 0;
         this.Y = (70 * yIndex) + 80;
-        let frontWheel = new Wheel(this, 105);
-        let rearWheel = new Wheel(this, 20);
+        new Wheel(this, 105);
+        new Wheel(this, 20);
         document.addEventListener("keydown", (e) => this.handleKeyDown(e));
         this.addEventListener("click", (e) => this.handleMouseClick(e));
         let parent = document.getElementById("container");
@@ -47,7 +48,7 @@ class Car extends HTMLElement {
             this.speed = 0;
         if (this.speed == 0 && this.braking && !this.stopped) {
             this.changeColor(80);
-            Game.Instance.addScore(this.X);
+            this.game.addScore(this.X);
             this.braking = false;
             this.stopped = true;
         }
@@ -78,13 +79,8 @@ class Game {
         }
         this.gameLoop();
     }
-    static get Instance() {
-        if (!Game.instance)
-            Game.instance = new Game();
-        return Game.instance;
-    }
     addCarWithRock(index) {
-        this.cars.push(new Car(index));
+        this.cars.push(new Car(index, this));
         this.rocks.push(new Rock(index));
     }
     gameLoop() {
@@ -129,7 +125,7 @@ class Game {
             rect1.Y + rect1.height > rect2.Y);
     }
 }
-window.addEventListener("load", () => Game.Instance);
+window.addEventListener("load", () => new Game());
 class Rock extends HTMLElement {
     constructor(index) {
         super();

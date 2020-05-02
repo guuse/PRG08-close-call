@@ -5,9 +5,9 @@
 
 ### Gameplay
 
-- De auto komt aanrijden van links over het plateau. De snelheid is random.
-- Zodra je op een toets drukt begint de auto met afremmen. 
-- Als de auto het rotsblok raakt, stort het rotsblok omlaag. Je score is 0.
+- De taxi's komt aanrijden van links naar rechts over het plateau. De snelheid is random.
+- Zodra je op de spatie drukt begint de auto met afremmen. 
+- Als de auto het rotsblok raakt, stort het rotsblok omlaag. Je bent game over.
 - Als je voor het rotsblok tot stilstand komt dan is je score hoger naar mate je dichter bij het blok tot stilstand bent gekomen.
 
 ### Tips

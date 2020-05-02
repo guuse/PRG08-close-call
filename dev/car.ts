@@ -2,6 +2,7 @@
 
 class Car extends HTMLElement {
     // Fields
+    private game    : Game
     private x       : number    = 0
     private y       : number    = 0
     private speed   : number    = Math.random() * 2 + 1
@@ -21,14 +22,15 @@ class Car extends HTMLElement {
     public get width()  : number    { return this.clientWidth }
     public get height() : number    { return this.clientHeight }
 
-    constructor(yIndex : number) {
+    constructor(yIndex : number, game : Game) {
         super()
 
-        this.X = 0
-        this.Y = (70 * yIndex) + 80
+        this.game   = game
+        this.X      = 0
+        this.Y      = (70 * yIndex) + 80
         
-        let frontWheel  = new Wheel(this, 105)
-        let rearWheel   = new Wheel(this, 20)
+        new Wheel(this, 105)  // front wheel 
+        new Wheel(this, 20)   // rear wheel 
 
         // hier een keypress event listener toevoegen. een keypress zorgt dat braking true wordt
         document.addEventListener("keydown", (e : KeyboardEvent) => this.handleKeyDown(e))
@@ -44,7 +46,7 @@ class Car extends HTMLElement {
     }
 
     private handleKeyDown(e : KeyboardEvent) {
-        if(e.key == ' ') {
+        if(e.key == ' ') { // spacebar
             // Brake
             this.braking = true
         }
@@ -60,7 +62,7 @@ class Car extends HTMLElement {
         
         if(this.speed == 0 && this.braking && !this.stopped) {
             this.changeColor(80) //green
-            Game.Instance.addScore(this.X)
+            this.game.addScore(this.X)
             this.braking = false
             this.stopped = true
         }

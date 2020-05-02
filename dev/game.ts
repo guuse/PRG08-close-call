@@ -1,6 +1,4 @@
 class Game {
-    // Static fields
-    private static instance : Game
 
     // Fields
     private cars    : Car[]     = []
@@ -9,13 +7,8 @@ class Game {
     private request : number    = 0
     private gameover: boolean   = false
 
-    // Static Properties
-    public static get Instance() : Game {
-        if(!Game.instance) Game.instance = new Game()
-        return Game.instance
-    }
 
-    private constructor() {
+    constructor() {
         for(let i = 0 ; i < 6 ; i++) {
             this.addCarWithRock(i)
         }
@@ -24,7 +17,7 @@ class Game {
     }
 
     private addCarWithRock(index : number) {
-        this.cars.push(new Car(index))
+        this.cars.push(new Car(index, this))
         this.rocks.push(new Rock(index))
     }
 
@@ -79,4 +72,4 @@ class Game {
 } 
 
 // load
-window.addEventListener("load", () => Game.Instance )
+window.addEventListener("load", () => new Game() )
