@@ -45,7 +45,11 @@ class Rock extends HTMLElement{
         }
 
         //teken de div op de juiste positie
-        this.style.transform = `translate(${this.X}px, ${this.Y}px) rotate(${this.rotation}deg)`
+        this.draw()
+    }
+
+    private draw() : void {
+        this.style.transform =`translate(${this.X}px,${this.Y}px)`
     }
 
     public crashed(carSpeed : number) {

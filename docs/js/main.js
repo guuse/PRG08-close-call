@@ -157,7 +157,10 @@ class Rock extends HTMLElement {
             this.g = 0;
             this.rotationSpeed = 0;
         }
-        this.style.transform = `translate(${this.X}px, ${this.Y}px) rotate(${this.rotation}deg)`;
+        this.draw();
+    }
+    draw() {
+        this.style.transform = `translate(${this.X}px,${this.Y}px)`;
     }
     crashed(carSpeed) {
         this.g = 9.81;

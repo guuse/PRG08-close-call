@@ -11,6 +11,17 @@
 - Als de auto het rotsblok raakt, stort het rotsblok omlaag. Je bent game over.
 - Als je voor het rotsblok tot stilstand komt dan is je score hoger naar mate je dichter bij het blok tot stilstand bent gekomen.
 
+### UML
+![alt text](UML-close-call.png "Close Call")
+
+Hierboven zie je de UML van de uiteindelijke uitwerking. Je ziet dat een **abstract** class GameObject (schuingedrukt) is toegevoegd. In deze class is een abstract functie onCollision toegevoegd. We dwingen af dat de child deze functie moet hebben EN invulling moet geven aan de functie. 
+
+Bij een normale class zou er een  lege functie (onCollision) aangemaakt kunnen worden. Maar de kans bestaat dat de child geen invulling geeft en dan gebeurt er niks. Ook helpt je IDE niet met het aanmaken van de method in de child class
+
+### Opdracht
+- Bouw de game volgens de hierboven getoonde UML. 
+- Zet de game online (github pages) en lever de link in op Teams.
+
 ### Tips
 
 - De html heeft een `<container>` element waarin alle game elementen geplaatst worden.
