@@ -59,4 +59,4 @@ class Rock extends HTMLElement{
     }
 }
 
-window.customElements.define("rock-component", Rock)
+window.customElements.define("rock-component", Rock as any)
