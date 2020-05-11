@@ -9,4 +9,4 @@ class Wheel extends HTMLElement{
     }
 }
 
-window.customElements.define("wheel-component", Wheel)
+window.customElements.define("wheel-component", Wheel as any)
